@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vulnerability Scanner</title>
+  <link rel="stylesheet" href="style.css"/>
+ 
+
+
+</head>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/6834a42890998119105a7959/1is6q2fs4';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+<body>
+
+  <header></header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/JustScan.png" alt="Scannet Logo" height="64" />
+        <span>JustScan</span>
+      </div>
+      
+      <ul class="nav-links">
+        <li><a href="#scanner">Scanner</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#creators">Creators</a></li>
+        <li><a href="#history">History</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <h1>🛡️ JustScan - Web Vulnerability Scanner</h1>
+    <select id="scan-mode">
+      <option value="basic">Basic Scan (JavaScript)</option>
+      <option value="pro">Pro Scan (Python)</option>
+    </select>
+
+    <form id="scanForm">
+      <input type="url" id="link-input" placeholder="Enter website URL..." required />
+      <textarea id="payload-input" placeholder="Enter payloads (one per line)..."></textarea>
+      <label for="payload-file" class="file-upload-button">📤 Upload Payloads (.txt)</label>
+      <input type="file" id="payload-file" accept=".txt" style="display: none;" />
+      <button type="submit">🔍 Start Scan</button>
+    </form>
+
+    
+    
+    
+    <div id="loading" class="hidden">
+      <div class="loader"></div>
+      <p>Scanning in progress...</p>
+    </div>
+    
+    <div id="payload-notice" class="hidden">No payloads entered, using default set.</div>
+    
+    <div id="summary-results" style="display:none;">
+      <p>Total tested: <span id="total-tested">0</span></p>
+      <p>✅ Vulnerable: <span id="vulnerable-count">0</span></p>
+      <p>🔁 Redirects: <span id="redirect-count">0</span></p>
+      <p>🛡️ Not Vulnerable: <span id="not-vulnerable-count">0</span></p>
+    </div>
+    
+    <hr />
+
+    
+    
+  
+    
+    <div class="results">
+      <h3>🟥 Vulnerable URLs</h3>
+      <div id="vulnerable-list" class="result-card"></div>
+    
+      <h3>🟨 Redirected URLs</h3>
+      <div id="redirect-list" class="result-card"></div>
+    
+      <h3>🟩 Safe or Unreachable URLs</h3>
+      <div id="not-vulnerable-list" class="result-card"></div>
+    </div>
+    
+    <div id="pro-results"></div>
+    
+  </div>
+
+</form>
+
+<div id="chart-container" class="hidden" style="width: 70%; max-width: 400px; margin: 20px auto;">
+  <canvas id="vulnerabilityChart"></canvas>
+</div>
+
+<div id="loading" class="hidden">
+  <div class="loader"></div>
+  <p>Scanning in progress...</p>
+</div>
+
+  <!-- WAVE DIVIDER -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+    <path d="M0,32L48,48C96,64,192,96,288,117.3C384,139,480,149,576,144C672,139,768,117,864,106.7C960,96,1056,96,1152,90.7C1248,85,1344,75,1392,69.3L1440,64L1440,160L1392,160C1344,160,1248,160,1152,160C1056,160,960,160,864,160C768,160,672,160,576,160C480,160,384,160,288,160C192,160,96,160,48,160L0,160Z" 
+    fill="#102531"></path>
+  </svg>
+</div>
+
+<section id="history" class="info-section">
+  <h2>📜 Scan History</h2>
+  <div id="history-list">
+    <p>Loading history...</p>
+  </div>
+
+  <button onclick="clearHistory()" style="margin-bottom: 20px;">🗑️ Clear history</button>
+
+</section>
+
+
+  <section id="about" class="info-section">
+    <h2>About Us</h2>
+    <p>
+      Just Scan is a powerful tool designed to help developers and security professionals identify vulnerabilities in web applications. Our mission is to make the Internet a safer place by providing an easy-to-use platform for scanning and analyzing websites.
+
+With features such as URL scanning and detailed vulnerability reports, our tool ensures that your web applications are protected from common threats such as SQL Injection, Cross-Site Scripting (XSS) and more.
+    </p>
+  </section>
+
+  <section id="creators" class="info-section">
+    <h2>Creators</h2>
+    <p>
+      Developed with ❤️ by a passionate team of cybersecurity students: Nurberdi, Dzhihangir, Almat.
+    </p>
+  </section>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ 
+
+</body>
+</html>
