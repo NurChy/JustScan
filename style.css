@@ -1,0 +1,250 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  max-width: 700px;
+  width: 100%;
+  padding: 30px;
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="url"],
+textarea {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+button {
+  padding: 10px 20px;
+  background: #00c9ff;
+  background: linear-gradient(to right, #92fe9d, #00c9ff);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none;
+}
+
+.results {
+  text-align: left;
+  margin-top: 20px;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1b2b34;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00c9ff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #00c9ff;
+}
+
+.info-section {
+  
+  padding: 60px 30px;
+  background-color: #102531;
+  border-top: 1px solid #2c5364;
+  width: 100%;
+  border-radius: 40px 40px 0 0;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+
+
+.info-section h2 {
+  color: #00c9ff;
+  margin-bottom: 15px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.logo img {
+  vertical-align: middle;
+}
+
+
+.wave-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin-top: -40px;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
+
+
+.info-section {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #00c9ff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+select#scan-mode {
+  padding: 10px 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #92fe9d, #00c9ff);
+  color: #000;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  transition: transform 0.2s ease;
+}
+
+select#scan-mode:hover {
+  transform: scale(1.03);
+}
+
+select#scan-mode:focus {
+  box-shadow: 0 0 0 2px rgba(0, 201, 255, 0.5);
+}
+
+
+.result-card {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid #2c5364;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 10px;
+  min-height: 60px;
+  max-height: 200px;         
+  overflow-y: auto;          
+  word-break: break-all;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+
+.result-card:hover {
+  border-color: #00c9ff;
+  box-shadow: 0 0 10px rgba(0, 201, 255, 0.2); 
+}
+
+
+.file-upload-button {
+  display: block; 
+  padding: 12px;
+  background: #2c5364;
+  border: 1px solid #203a43;
+  border-radius: 8px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.file-upload-button:hover {
+  background-color: #203a43;
+  transform: scale(1.02); 
+}
+
+

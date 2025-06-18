@@ -1,0 +1,110 @@
+[
+  {
+    "name": "CSRF",
+    "severity": "Medium",
+    "description": "Cross-Site Request Forgery tricks users into executing unwanted actions in a web application.",
+    "reason": "Lack of anti-CSRF tokens and improper validation of the origin of requests.",
+    "recommendation": "Implement CSRF tokens and verify the request origin via headers.",
+    "cve": "N/A",
+    "source": "https://owasp.org/www-community/attacks/csrf"
+  },
+  {
+    "name": "SSRF",
+    "severity": "High",
+    "description": "SSRF detected.",
+    "reason": "Reason not specified for SSRF.",
+    "recommendation": "Mitigate SSRF properly.",
+    "cve": "N/A",
+    "source": "https://owasp.org"
+  },
+  {
+    "name": "Command Injection",
+    "severity": "High",
+    "description": "Command Injection allows attackers to execute arbitrary system commands on the host server.",
+    "reason": "User input is passed directly to system shell commands without validation.",
+    "recommendation": "Avoid using `os.system`; use safer libraries like subprocess with sanitized inputs.",
+    "cve": "CVE-2021-41773",
+    "source": "https://owasp.org/www-community/attacks/Command_Injection"
+  },
+  {
+    "name": "Host Header Injection",
+    "severity": "Medium",
+    "description": "Host Header Injection detected.",
+    "reason": "Reason not specified for Host Header Injection.",
+    "recommendation": "Mitigate Host Header Injection properly.",
+    "cve": "N/A",
+    "source": "https://owasp.org"
+  },
+  {
+    "name": "Clickjacking",
+    "severity": "Low",
+    "description": "Clickjacking tricks users into clicking on elements that are hidden or disguised.",
+    "reason": "Absence of X-Frame-Options or Content Security Policy headers.",
+    "recommendation": "Implement `X-Frame-Options: DENY` or CSP `frame-ancestors 'none'`.",
+    "cve": "N/A",
+    "source": "https://owasp.org/www-community/attacks/Clickjacking"
+  },
+  {
+    "name": "Information Disclosure",
+    "severity": "Medium",
+    "description": "Unintended leakage of sensitive data like server configuration, credentials, or internal paths.",
+    "reason": "Verbose error messages, misconfigured server files, or debug information exposed.",
+    "recommendation": "Disable detailed error messages in production and sanitize sensitive output.",
+    "cve": "N/A",
+    "source": "https://owasp.org/www-community/attacks/Information_exposure"
+  },
+  {
+    "name": "Missing Security Headers",
+    "severity": "Low",
+    "description": "Lack of security headers can leave applications vulnerable to various attacks like clickjacking or XSS.",
+    "reason": "Response headers like CSP, X-Content-Type-Options, or X-Frame-Options are not configured.",
+    "recommendation": "Set appropriate security headers in HTTP responses.",
+    "cve": "N/A",
+    "source": "https://owasp.org/www-project-secure-headers/"
+  },
+  {
+    "name": "Reflected Input",
+    "severity": "Medium",
+    "description": "Reflected Input detected.",
+    "reason": "Reason not specified for Reflected Input.",
+    "recommendation": "Mitigate Reflected Input properly.",
+    "cve": "N/A",
+    "source": "https://owasp.org"
+  },
+  {
+    "name": "Error Disclosure",
+    "severity": "Low",
+    "description": "Error Disclosure detected.",
+    "reason": "Reason not specified for Error Disclosure.",
+    "recommendation": "Mitigate Error Disclosure properly.",
+    "cve": "N/A",
+    "source": "https://owasp.org"
+  },
+  {
+    "name": "Brute Force",
+    "severity": "High",
+    "description": "Brute Force detected.",
+    "reason": "Reason not specified for Brute Force.",
+    "recommendation": "Mitigate Brute Force properly.",
+    "cve": "N/A",
+    "source": "https://owasp.org"
+  },
+  {
+    "name": "Weak Passwords",
+    "severity": "Medium",
+    "description": "Weak Passwords detected.",
+    "reason": "Reason not specified for Weak Passwords.",
+    "recommendation": "Mitigate Weak Passwords properly.",
+    "cve": "N/A",
+    "source": "https://owasp.org"
+  },
+  {
+    "name": "Security Misconfiguration",
+    "severity": "Medium",
+    "description": "Default configurations, incomplete setups, or unused pages/components left enabled.",
+    "reason": "Security settings are not defined, maintained, or properly configured.",
+    "recommendation": "Harden servers, disable unused features, and regularly review configurations.",
+    "cve": "N/A",
+    "source": "https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration"
+  }
+]
